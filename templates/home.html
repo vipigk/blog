@@ -1,0 +1,26 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="jumbotron text-center">
+    <h1>Welcome To BlogApp</h1>
+    <p class="lead">This application is built on the Python Flask framework.</p>
+    {% if session.logged_in == NULL %}
+      <a href="/register" class="btn btn-primary btn-lg">Register</a>
+      <a href="/login" class="btn btn-success btn-lg">Login</a>
+    {% else %}
+    	<a href="/articles" class="btn btn-primary btn-lg">articles</a>
+    {% endif %}
+  </div>
+
+  <!-- Example of a responsive two-column layout -->
+  <div class="row">
+    <div class="col-md-6">
+      <h2>About this App</h2>
+      <p>This side might contain information about the application's features or purpose. On large screens it takes half the width, but on small screens it will take the full width.</p>
+    </div>
+    <div class="col-md-6">
+      <h2>Latest News</h2>
+      <p>This side can showcase recent updates or blog posts. It will stack below the 'About' section on mobile devices.</p>
+    </div>
+  </div>
+{% endblock %}
